@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const realEntries = await getCollection("real");
+  return realEntries.map((data) => ({
+    params: { slug: data.slug },
+    props: { data },
+  }));
+}
+
+const { data } = Astro.props;
+const { Content } = await data.render();
+console.log(data.data.link);
+---
+
+<Layout>
+  <div class="containerfilm">
+    <iframe width="80%" height="80%" src={data.data.link} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</Layout>
+<style>
+  .containerfilm {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+  }
+</style>

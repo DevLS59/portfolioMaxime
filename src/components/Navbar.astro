@@ -1,0 +1,221 @@
+---
+
+---
+
+  <!-- NAVBAR -->
+  <div class="container-nav">
+    <div class="title-header"><a href="/">MAXIME SOMON</a></div>
+    <div class="nav-menu-toggle">Contact</div>
+  </div>
+  <!--page Contact -->
+  <div class="menu">
+    <div class="adresse-mail">
+      <a href="mailto:somonmaxime10@gmail.com">Contactez-moi !</a>
+    </div>
+
+    <div class="wrapper_gravityBtn">
+        <div class="gravityButton">
+          <button style="--color: hotpink">
+            <a href="https://www.instagram.com/maxime_somon_/?igshid=OGQ5ZDc2ODk2ZA%3D%3D">
+              <img class=".buttonIcon" src="images/instagram.svg" alt="" />
+            </a>
+          </button>
+        </div>
+        <div class="gravityButton">
+          <button style="--color: hotpink">
+            <a href="https://www.youtube.com/@bmdbounce7950">
+              <img class=".buttonIcon" src="images/youtube.svg" alt="" />
+            </a>
+          </button>
+        </div>
+        <div class="gravityButton">
+          <button style="--color: hotpink">
+            <a href="">
+              <img class=".buttonIcon" src="images/cv.svg" alt="" />
+            </a>
+          </button>
+        </div>
+      </div>
+    </div>
+<style lang="scss">
+
+  /* NAVBAR */
+.container-nav {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  z-index: 300;
+}
+
+.title-header {
+  font-family: "SaoTorpes";
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  color: #000;
+  // z-index: 300;
+}
+
+.nav-menu-toggle {
+  position: absolute;
+  right: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.menu {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.8s;
+  background: #fff;
+  transform: translateY(-100%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 200;
+}
+
+.adresse-mail {
+  position: absolute;
+  top: 40%;
+  opacity: 0;
+  transition: 0.5s;
+  /* margin-bottom : 200px; */
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.wrapper_gravityBtn {
+  position: absolute;
+  bottom: 15%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  display: flex;
+  transform: translateX(-50%);
+  z-index: 500;
+}
+
+.gravityButton {
+  display: grid;
+  place-items: center;
+  width: 192px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  // border: 1px dashed #fff2;
+
+  & > button {
+    font: inherit;
+    width: 64px;
+    aspect-ratio: 1;
+    background: none;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    transform: translate(var(--tx, 0), var(--ty, 0));
+    opacity: var(--opacity, 0.25);
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+
+    &:hover,
+    &:focus-visible {
+      --_fill: var(--color, #fff);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+      opacity: 1;
+    }
+  }
+}
+
+.buttonIcon {
+  width: 50%;
+  fill: var(--_fill, #fff);
+  transition: fill 0.3s;
+}
+
+img {
+  width: 70%;
+}
+</style>
+
+<script>
+  const toggle = document.querySelector(".nav-menu-toggle");
+  const menu = document.querySelector(".menu");
+  const titleHeader = document.querySelector(".title-header");
+  
+  let mm = gsap.matchMedia();
+  const tl = gsap.timeline();
+
+
+mm.add("(min-width: 600px)", () => {
+  tl.to(menu, { y: 0 })
+  .to(titleHeader, { y: '50vh'})
+  .to(titleHeader, { scale: 3, delay: 0.5 })
+  .to('.adresse-mail', {opacity : 1})
+  //.to('.btns-social', {opacity : 1})
+  tl.reversed(true);
+  tl.to;
+});
+
+mm.add("(max-width: 599px)", () => {
+   tl.to(menu, { y: 0 })
+   .to(titleHeader, { y: '50vh'}) 
+   .to(titleHeader, { scale: 2, delay: 0.5 })
+    .to('.adresse-mail', {opacity : 1})
+  //.to('.btns-social', {opacity : 1})
+   tl.reversed(true);
+    tl.to;
+   
+});
+toggle.addEventListener("click", () => {
+    tl.reversed(!tl.reversed());
+  });
+
+
+
+
+document.querySelectorAll('.gravityButton').forEach(btn => {
+ 
+  btn.addEventListener('mousemove', (e) => {
+
+    const rect = btn.getBoundingClientRect();
+    const h = rect.width / 2;
+
+    const x = e.clientX - rect.left - h;
+    const y = e.clientY - rect.top - h;
+
+    const r1 = Math.sqrt(x * x + y * y);
+    const r2 = (1 - (r1 / h)) * r1;
+
+    const angle = Math.atan2(y, x);
+    const tx = Math.round(Math.cos(angle) * r2 * 100) / 100;
+    const ty = Math.round(Math.sin(angle) * r2 * 100) / 100;
+
+    const op = (r2 / r1) + 0.25;
+
+    btn.style.setProperty('--tx', `${tx}px`);
+    btn.style.setProperty('--ty', `${ty}px`);
+    btn.style.setProperty('--opacity', `${op}`);
+  });
+
+  btn.addEventListener('mouseleave', (e) => {
+    btn.style.setProperty('--tx', '0px');
+    btn.style.setProperty('--ty', '0px');
+    btn.style.setProperty('--opacity', `${0.25}`);
+  });
+})
+</script>

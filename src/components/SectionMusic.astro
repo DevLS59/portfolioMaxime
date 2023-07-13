@@ -1,0 +1,203 @@
+---
+import {getCollection} from 'astro:content'
+
+
+const musicData = await getCollection('music')
+
+// console.log(musicData)
+
+---
+
+
+ <!-- section music -->
+    <section class="wrapper_music" id="music">
+
+      <div class="part-left">
+        <h1> MUSIC</h1>
+      </div>
+
+      <div class="swiper myMusic">
+
+          <div class="swiper-wrapper">
+
+            {
+              musicData.map( data => (
+
+             
+            <div class="card swiper-slide">
+              <div class="card__image">
+                <img src={data.data.pochette} alt="card image">
+              </div>
+
+              <div class="card_content">
+                <img src="./images/spotify-1.svg" alt="">
+                <img src="./images/deezer-logo.svg" alt="">
+              </div>
+              
+            </div>
+
+              ))
+            }
+
+            
+           
+          </div>
+        </div>
+  </section> 
+
+
+  <style lang="scss">
+  
+  .wrapper_music {
+  background: black;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+
+  @media (max-width: 900px) {
+    margin-left: 0;
+  }
+
+  .part-left {
+    width: 30vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    mix-blend-mode: screen;
+    z-index: 500;
+
+    @media (max-width: 900px) {
+      width: 100%;
+      height: 30%;
+    }
+
+    h1 {
+      font-weight: 800;
+      font-family: "SaoTorpes";
+      color: #000;
+      font-size: 5vw;
+      margin-bottom: 3rem;
+
+      @media (max-width: 900px) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .swiper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .swiper-wrapper {
+    width: 100%;
+    height: 35em;
+    display: flex;
+    align-items: center;
+  }
+
+  .swiper-slide {
+    background: #000;
+  }
+  .card {
+    position: relative;
+    width: 20em;
+    height: 20em;
+    /* background-color: #666; */
+    border-radius: 2em;
+    display: flex;
+    align-items: center;
+    // flex-direction: column;
+    // overflow: hidden;
+
+    margin: 0 2em;
+
+    // &::after {
+    //   content: "";
+    //   width: 100%;
+    //   height: 100%;
+    //   background: red;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   transform: translateY(100%);
+    // }
+
+    @media (max-width: 900px) {
+      width: 10em;
+      height: 10em;
+    }
+
+    .card_content {
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: 0.2s;
+      border-radius: 2em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      
+    }
+    .card_content img {
+      width : 60%;
+    }
+  }
+}
+
+.card__image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  -webkit-box-reflect: below 0.2px
+    linear-gradient(transparent, transparent, #0002, #0004);
+}
+
+.card:hover {
+  .card_content {
+    opacity: 0.7;
+  }
+
+  .card__image img {
+    -webkit-box-reflect: below 0.05px
+      linear-gradient(transparent, transparent, transparent, #0004);
+  }
+}
+  </style>
+
+<script is:inline>
+
+    
+var swiper = new Swiper(".myMusic", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 30,
+    stretch: 0,
+    depth: 300,
+    modifier: 1,
+    slideShadows: true,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});
+  </script>
