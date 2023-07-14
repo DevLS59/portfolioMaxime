@@ -1,101 +1,87 @@
 ---
 import {getCollection} from 'astro:content'
-
-
 const musicData = await getCollection('music')
 
 // console.log(musicData)
-
 ---
 
+<!-- section music -->
+  <section class="wrapper_music" id="music">
 
- <!-- section music -->
-    <section class="wrapper_music" id="music">
+    <div class="part-left">
+      <h1> MUSIC</h1>
+    </div>
 
-      <div class="part-left">
-        <h1> MUSIC</h1>
-      </div>
-
-      <div class="swiper myMusic">
-
-          <div class="swiper-wrapper">
-
-            {
-              musicData.map( data => (
-
-             
+    <div class="swiper myMusic">
+      <div class="swiper-wrapper">
+        {
+          musicData.map( data => (
+            
             <div class="card swiper-slide">
               <div class="card__image">
                 <img src={data.data.pochette} alt="card image">
               </div>
-
               <div class="card_content">
                 <img src="./images/spotify-1.svg" alt="">
                 <img src="./images/deezer-logo.svg" alt="">
               </div>
-              
             </div>
-
-              ))
-            }
-
-            
-           
-          </div>
-        </div>
+          ))
+        }
+      </div>
+    </div>
   </section> 
-
 
   <style lang="scss">
   
   .wrapper_music {
-  background: black;
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-
-  @media (max-width: 900px) {
-    margin-left: 0;
-  }
-
-  .part-left {
-    width: 30vw;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #fff;
+    background: black;
+    position: relative;
+    width: 100%;
+    height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    mix-blend-mode: screen;
-    z-index: 500;
 
     @media (max-width: 900px) {
-      width: 100%;
-      height: 30%;
+      margin-left: 0;
     }
 
-    h1 {
-      font-weight: 800;
-      font-family: "SaoTorpes";
-      color: #000;
-      font-size: 5vw;
-      margin-bottom: 3rem;
+    .part-left {
+      width: 30vw;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      mix-blend-mode: screen;
+      z-index: 500;
 
       @media (max-width: 900px) {
-        margin-bottom: 1rem;
+        width: 100%;
+        height: 15%;
+      }
+
+      h1 {
+        font-weight: 800;
+        font-family: "SaoTorpes";
+        color: #000;
+        font-size: 5vw;
+       
+
+        @media (max-width: 900px) {
+          font-size: 3rem;
+        }
       }
     }
-  }
 
-  .swiper {
-    width: 100%;
-    display: flex;
-    align-items: center;
-  }
+    .swiper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
 
   .swiper-wrapper {
     width: 100%;
@@ -111,29 +97,14 @@ const musicData = await getCollection('music')
     position: relative;
     width: 20em;
     height: 20em;
-    /* background-color: #666; */
     border-radius: 2em;
     display: flex;
     align-items: center;
-    // flex-direction: column;
-    // overflow: hidden;
-
     margin: 0 2em;
-
-    // &::after {
-    //   content: "";
-    //   width: 100%;
-    //   height: 100%;
-    //   background: red;
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   transform: translateY(100%);
-    // }
-
+ 
     @media (max-width: 900px) {
-      width: 10em;
-      height: 10em;
+      width: 15em;
+      height: 15em;
     }
 
     .card_content {
