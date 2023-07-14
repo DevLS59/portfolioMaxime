@@ -20,8 +20,11 @@ const realData = await getCollection('real')
               <source src={data.data.url} type="video/mp4" />
             </video>
           
-          <h3 class="title">{data.data.title} <br><span> (Chef électro)</span> </h3>
-        <a class="btn-link" href={`/real/${data.slug}`} >Regardez</a>
+
+            <div class="wrapper-title">
+              <h3 class="title">{data.data.title} <br><span> (Chef électro)</span> </h3>
+              <a class="btn-link" href={`/real/${data.slug}`} >Regardez</a>
+              </div>
         </div>  
         ))
       }
@@ -127,25 +130,35 @@ const realData = await getCollection('real')
     align-items: center;
   }
 
-  .swiper-slide .title {
-    font-family: "Gabo";
-    color: #fff;
-    position: absolute;
-    bottom: 50%;
-    left: 5rem;
-    font-size: 3vw; 
 
-    span {
-      font-size: 2vw;
-    
-    }
+  
+.wrapper-title {
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          position : absolute;
+          // width : 30%;
+          left : 10%;
+          top : 30%;
+          
+          
 
-    
+            .title {
+              font-family: "Gabo";
+              color: #fff;
+              font-size: 3vw;
+              margin-bottom : 2rem;
 
-    @media(max-width : 900px) {
-      font-size: 2rem;
-    }
-  }
+              span {
+                font-size: 2vw;
+              }
+
+              @media (max-width: 900px) {
+                font-size: 2rem;
+              }
+            }
+        }
 
   .swiper-slide video {
     display: block;
