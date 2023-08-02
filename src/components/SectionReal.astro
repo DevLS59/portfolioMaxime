@@ -1,35 +1,47 @@
 ---
 import {getCollection} from 'astro:content'
 
+const realData = await getCollection("real")
 
-const realData = await getCollection('real')
-
-
+// console.log(realData)
 
 ---
 
 <section class="real" id="real">
-  <div class="bg-video">
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
 
-        {realData.map( data => (
-          <div class="swiper-slide">
-            <video autoplay loop muted>
-              <source src={data.data.url} type="video/mp4" />
-            </video>
-          
-            <div class="wrapper-title">
-              <h3 class="title">{data.data.title} <br><span> (Chef électro)</span> </h3>
-              <a class="btn-link" href={`/real/${data.slug}`} >Regardez</a>
+  <div class="bg-video">
+
+    <div class="swiper mySwiper">
+
+      <div class="swiper-wrapper">
+        {
+          realData.map( data => (
+            <div class="swiper-slide">
+              <video autoplay loop muted>
+                <source src={data.data.url} type="video/mp4" />
+              </video>
+
+              <div class="wrapper-title">
+                <h3 class="title">
+
+                  {data.data.title}
+                   <>
+                    <br />
+                    <span> {data.data.role}</span>
+                  </>
+                </h3>
+                 <a class="btn-link" href={`/real/${data.slug}`}>
+                  Regardez
+                </a>
+              </div>
             </div>
-        </div>  
-        ))
+          ))
         }
       </div>
-      <div class="swiper-pagination"></div>
-    </div>
+
+    <div class="swiper-pagination"></div>
   </div>
+  
 
   <div class="part-right">
     <h1>REAL</h1>
@@ -83,7 +95,6 @@ const realData = await getCollection('real')
         
 
         @media (max-width: 900px) {
-         
           font-size: 3rem;
         }
       }
@@ -104,7 +115,6 @@ const realData = await getCollection('real')
   .swiper {
     width: 100%;
     height: 100vh;
-   
   }
 
   .swiper-wrapper {
@@ -145,6 +155,7 @@ const realData = await getCollection('real')
               color: #fff;
               font-size: 3vw;
               margin-bottom : 2rem;
+              letter-spacing: 0.1rem;
 
               span {
                 font-size: 2vw;

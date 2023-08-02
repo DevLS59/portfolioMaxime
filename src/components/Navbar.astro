@@ -16,14 +16,14 @@
     <div class="wrapper_gravityBtn">
         <div class="gravityButton">
           <button style="--color: hotpink">
-            <a href="https://www.instagram.com/maxime_somon_/?igshid=OGQ5ZDc2ODk2ZA%3D%3D">
+            <a href="https://www.instagram.com/maxime_somon_/?igshid=OGQ5ZDc2ODk2ZA%3D%3D" target="_blank">
               <img class=".buttonIcon" src="images/instagram.svg" alt="" />
             </a>
           </button>
         </div>
         <div class="gravityButton">
           <button style="--color: hotpink">
-            <a href="https://www.youtube.com/@bmdbounce7950">
+            <a href="https://www.youtube.com/@bmdbounce7950" target="_blank">
               <img class=".buttonIcon" src="images/youtube.svg" alt="" />
             </a>
           </button>
@@ -49,7 +49,7 @@
   display: flex;
   align-items: center;
   background: #fff;
-  z-index: 300;
+  z-index: 800;
 }
 
 .title-header {
@@ -93,6 +93,8 @@
   /* margin-bottom : 200px; */
   font-size: 2rem;
   font-weight: 300;
+
+  a { text-decoration: underline;}
 }
 
 .wrapper_gravityBtn {
@@ -178,7 +180,7 @@ mm.add("(max-width: 599px)", () => {
     .to('.adresse-mail', {opacity : 1})
   //.to('.btns-social', {opacity : 1})
    tl.reversed(true);
-    tl.to;
+    // tl.to;
    
 });
 toggle.addEventListener("click", () => {
@@ -186,7 +188,7 @@ toggle.addEventListener("click", () => {
   });
 
 
-
+// gravity btns
 
 document.querySelectorAll('.gravityButton').forEach(btn => {
  

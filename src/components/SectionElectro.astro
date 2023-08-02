@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 const electroData = await getCollection("electro");
 
-console.log(electroData)
+// console.log(electroData)
 ---
 
 <link
@@ -26,7 +26,7 @@ console.log(electroData)
                   {data.data.title}
                   <>
                     <br />
-                    <span> (Chef électro)</span>
+                    <span> {data.data.role}</span>
                   </>
                 </h3>
                 <a class="btn-link" href={`/electro/${data.slug}`}>
@@ -37,7 +37,7 @@ console.log(electroData)
           ))
         }
       </div>
-    </div>
+   
     <div class="swiper-pagination"></div>
   </div>
 
