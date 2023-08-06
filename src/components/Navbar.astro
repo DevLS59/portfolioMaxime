@@ -9,11 +9,11 @@
   </div>
   <!--page Contact -->
   <div class="menu">
-    <div class="adresse-mail">
+    <!-- <div class="adresse-mail">
       <a href="mailto:somonmaxime10@gmail.com">Contactez-moi !</a>
-    </div>
+    </div> -->
 
-    <div class="wrapper_gravityBtn">
+    <!-- <div class="wrapper_gravityBtn">
         <div class="gravityButton">
           <button style="--color: hotpink">
             <a href="https://www.instagram.com/maxime_somon_/?igshid=OGQ5ZDc2ODk2ZA%3D%3D" target="_blank">
@@ -35,7 +35,7 @@
             </a>
           </button>
         </div>
-      </div>
+      </div> -->
     </div>
 <style lang="scss">
 
@@ -50,6 +50,7 @@
   align-items: center;
   background: #fff;
   z-index: 800;
+  background : red;
 
  
 }
@@ -170,33 +171,33 @@ img {
   const menu = document.querySelector(".menu");
   const titleHeader = document.querySelector(".title-header");
   
-  let mm = gsap.matchMedia();
+//   let mm = gsap.matchMedia();
   const tl = gsap.timeline();
 
 
-mm.add("(min-width: 600px)", () => {
-  tl.to(menu, { y: 0 })
-  .to(titleHeader, { y: '50vh'})
-  .to(titleHeader, { scale: 3, delay: 0.5 })
-  .to('.adresse-mail', {opacity : 1})
-  //.to('.btns-social', {opacity : 1})
-  tl.reversed(true);
-  tl.to;
-});
+// mm.add("(min-width: 600px)", () => {
+//   tl.to(menu, { y: 0 })
+//   .to(titleHeader, { y: '50vh'})
+//   // .to(titleHeader, { scale: 3, delay: 0.5 })
+//   // .to('.adresse-mail', {opacity : 1})
+//   //.to('.btns-social', {opacity : 1})
+//   tl.reversed(true);
+  
+// });
 
-mm.add("(max-width: 599px)", () => {
-   tl.to(menu, { y: 0 })
-   .to(titleHeader, {textAlign : 'center', paddingLeft : 0, y: '50vh'}) 
-   .to(titleHeader, { scale: 2, delay: 0.5 })
-    .to('.adresse-mail', {opacity : 1})
-  //.to('.btns-social', {opacity : 1})
-   tl.reversed(true);
-    // tl.to;
+// mm.add("(max-width: 599px)", () => {
+//    tl.to(menu, { y: 0 })
+//   //  .to(titleHeader, {textAlign : 'center', paddingLeft : 0, y: '50vh'}) 
+//   //  .to(titleHeader, { scale: 2, delay: 0.5 })
+//   //   .to('.adresse-mail', {opacity : 1})
+//   //.to('.btns-social', {opacity : 1})
+//    tl.reversed(true);
    
-});
-toggle.addEventListener("click", () => {
-    tl.reversed(!tl.reversed());
-  });
+   
+// });
+// toggle.addEventListener("click", () => {
+//     tl.reversed(!tl.reversed());
+//   });
 
 
 // gravity btns
