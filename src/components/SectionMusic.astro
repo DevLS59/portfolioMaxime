@@ -25,7 +25,8 @@ const musicData = await getCollection('music')
               <div class="card_content">
                 <h3>{data.data.title}</h3>
                 <a class="link" href={data.data.link} target="_blank"><img src="./images/spotify-1.svg" alt=""/></a>
-                <img src="./images/deezer-logo.svg" alt=""/>
+                <a class='link' href={data.data.link_deezer} target="_blank"> <img src="./images/deezer-logo.svg" alt=""/></a>
+                
               </div>
             </div>
           ))
@@ -130,8 +131,9 @@ const musicData = await getCollection('music')
 
   
 h3 {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
  margin-bottom : 3rem;
+ font-weight: 200;
    font-family: "Gabo";
    text-align: center;
 }
