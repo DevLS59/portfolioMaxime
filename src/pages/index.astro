@@ -1,66 +1,62 @@
 ---
-import Header from '../components/Header.astro';
-import SectionElectro from '../components/SectionElectro.astro';
-import SectionMusic from '../components/SectionMusic.astro';
-import SectionReal from '../components/SectionReal.astro';
-import Layout from '../layouts/Layout.astro';
+import Header from "../components/Header.astro";
+import SectionElectro from "../components/SectionElectro.astro";
+import SectionMusic from "../components/SectionMusic.astro";
+import SectionReal from "../components/SectionReal.astro";
+import Layout from "../layouts/Layout.astro";
 
-import {getCollection} from 'astro:content'
-const electroData = await getCollection('electro')
+import { getCollection } from "astro:content";
+const electroData = await getCollection("electro");
 // console.log(electroData)
 ---
 
 <Layout title="PORTFOLIO MAXIME SOMON ">
-	<div>
-   
+  <div>
     <Header />
     <SectionElectro />
     <SectionReal />
-    <SectionMusic />
+    <!-- <SectionMusic /> -->
   </div>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-
-  
-	
+  main {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 60ch;
+  }
 </style>
- 
 
 <!-- gsap -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+  integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"></script>
 
-     <!-- SWIPER -->
-    <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<!-- SWIPER -->
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-    <script is:inline>
-    var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-      centeredSlides: true,
+<script is:inline>
+var swiper = new Swiper(".mySwiper", {
+  spaceBetween: 30,
+  centeredSlides: true,
 
-      speed: 1200,
-      effect: "fade",
-      autoplay: {
-        delay: 10000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      // navigation: {
-      //   nextEl: ".swiper-button-next",
-      //   prevEl: ".swiper-button-prev",
-      // },
-    });
-    </script>
+  speed: 1200,
+  effect: "fade",
+  autoplay: {
+    delay: 10000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  // navigation: {
+  //   nextEl: ".swiper-button-next",
+  //   prevEl: ".swiper-button-prev",
+  // },
+});
+</script>

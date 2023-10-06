@@ -37,163 +37,153 @@ const electroData = await getCollection("electro");
           ))
         }
       </div>
-   
-    <div class="swiper-pagination"></div>
-  </div>
 
-  <div class="part-left">
-    <h1>ELECTRO</h1>
-    <!-- <p class="description">
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="part-left">
+      <h1>ELECTRO</h1>
+      <!-- <p class="description">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex,
         perspiciatis debitis in nisi consequatur similique dolores libero sequi
         illum sit, ullam harum quis vero minima enim explicabo inventore alias
         impedit?
       </p> -->
+    </div>
   </div>
-</div>
 
-<style lang="scss">
-
-  .wrapper-elec3 {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    
-
-
-   
-
-    .bg-video {
+  <style lang="scss">
+    .wrapper-elec3 {
       width: 100%;
-      height: 100%;
-    }
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
 
-    .part-left {
-      width: 30vw;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      mix-blend-mode: screen;
-      z-index: 500;
-      opacity: 0.7;
-
-      @media (max-width: 900px) {
-        width: 100%;
-        height: 15%;
-        top : 60px;
-      }
-
-      h1 {
-        font-weight: 800;
-        font-family: "SaoTorpes";
-        color: #000;
-        font-size: 5vw;
-
-        @media (max-width: 900px) {
-          font-size: 3rem;
-        }
-      }
-
-    }
-  }
-  
-
-  .swiper {
-    width: 100%;
-    height: 100vh;
-
-    .swiper-wrapper {
-      width: 100%;
-      height: 100%;
-
-      .swiper-slide {
+      .bg-video {
         width: 100%;
         height: 100%;
-        text-align: center;
-        font-size: 18px;
+      }
+
+      .part-left {
+        width: 30vw;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
         background: #fff;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        position : relative;
+        flex-direction: column;
+        mix-blend-mode: screen;
+        z-index: 500;
+        opacity: 0.7;
 
+        @media (max-width: 900px) {
+          width: 100%;
+          height: 15%;
+          top: 60px;
+        }
 
-        .wrapper-title {
+        h1 {
+          font-weight: 800;
+          font-family: "SaoTorpes";
+          color: #000;
+          font-size: 5vw;
+
+          @media (max-width: 900px) {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100vh;
+
+      .swiper-wrapper {
+        width: 100%;
+        height: 100%;
+
+        .swiper-slide {
+          width: 100%;
+          height: 100%;
           text-align: center;
+          font-size: 18px;
+          background: #fff;
           display: flex;
           flex-direction: column;
+          justify-content: center;
           align-items: center;
-          position : absolute;
-          // width : 30%;
-          right : 10%;
-          top : 30%;
-          
-          
+          position: relative;
+
+          .wrapper-title {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            // width : 30%;
+            right: 10%;
+            top: 30%;
 
             .title {
               font-family: "Gabo";
               color: #fff;
               font-size: 3vw;
-              margin-bottom : 2rem;
+              margin-bottom: 2rem;
 
               span {
                 font-size: 2vw;
+                text-transform: uppercase;
               }
 
               @media (max-width: 900px) {
                 font-size: 2rem;
               }
             }
+          }
         }
       }
     }
-  }
 
-  .swiper-slide video {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+    .swiper-slide video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-  .mySwiper .swiper-pagination-bullet {
-    width: 20px;
-    height: 20px;
-  }
+    .mySwiper .swiper-pagination-bullet {
+      width: 20px;
+      height: 20px;
+    }
+  </style>
 
- 
-</style>
+  <script
+    is:inline
+    src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-<script
-  is:inline
-  src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script is:inline>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
 
-<script is:inline>
-var swiper = new Swiper(".mySwiper", {
-  spaceBetween: 30,
-  centeredSlides: true,
-
-  speed: 1200,
-  effect: "fade",
-  autoplay: {
-    delay: 10000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  // navigation: {
-  //   nextEl: ".swiper-button-next",
-  //   prevEl: ".swiper-button-prev",
-  // },
-});
-</script>
+      speed: 1200,
+      effect: "fade",
+      autoplay: {
+        delay: 10000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      // navigation: {
+      //   nextEl: ".swiper-button-next",
+      //   prevEl: ".swiper-button-prev",
+      // },
+    });
+  </script>
+</div>

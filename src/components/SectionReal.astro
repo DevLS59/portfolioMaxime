@@ -1,21 +1,17 @@
 ---
-import {getCollection} from 'astro:content'
+import { getCollection } from "astro:content";
 
-const realData = await getCollection("real")
+const realData = await getCollection("real");
 
 // console.log(realData)
-
 ---
 
 <section class="real" id="real">
-
   <div class="bg-video">
-
     <div class="swiper mySwiper">
-
       <div class="swiper-wrapper">
         {
-          realData.map( data => (
+          realData.map((data) => (
             <div class="swiper-slide">
               <video autoplay loop muted>
                 <source src={data.data.url} type="video/mp4" />
@@ -23,14 +19,13 @@ const realData = await getCollection("real")
 
               <div class="wrapper-title">
                 <h3 class="title">
-
                   {data.data.title}
-                   <>
+                  <>
                     <br />
                     <span> {data.data.role}</span>
                   </>
                 </h3>
-                 <a class="btn-link" href={`/real/${data.slug}`}>
+                <a class="btn-link" href={`/real/${data.slug}`}>
                   Regardez
                 </a>
               </div>
@@ -39,173 +34,160 @@ const realData = await getCollection("real")
         }
       </div>
 
-    <div class="swiper-pagination"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="part-right">
+      <h1>REAL</h1>
+    </div>
   </div>
-  
 
-  <div class="part-right">
-    <h1>REAL</h1>
-  </div>
-</section>
+  <style lang="scss">
+    .link-video {
+      width: 100%;
+      height: 100%;
+    }
+    .real {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
 
+      .bg-video {
+        width: 100%;
+        height: 100%;
+      }
 
-<style lang="scss">
-  .link-video {
-    width : 100%;
-    height : 100%;
-  }
-  .real {
-    width: 100%;
-    height : 100vh;
-    position : relative;
-    overflow : hidden;
+      .part-right {
+        width: 30vw;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        mix-blend-mode: screen;
+        z-index: 500;
+        opacity: 0.7;
 
-    .bg-video {
+        @media (max-width: 900px) {
+          width: 100%;
+          height: 15%;
+          top: 60px;
+        }
+
+        h1 {
+          font-weight: 800;
+          font-family: "SaoTorpes";
+          color: #000;
+          font-size: 5vw;
+
+          @media (max-width: 900px) {
+            font-size: 3rem;
+          }
+        }
+
+        .description {
+          width: 90%;
+          margin: 0 auto;
+          font-family: sans-serif;
+
+          @media (max-width: 500px) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100vh;
+    }
+
+    .swiper-wrapper {
       width: 100%;
       height: 100%;
     }
 
-    .part-right {
-      width: 30vw;
+    .swiper-slide {
+      width: 100%;
       height: 100%;
-      position: absolute;
-      top: 0;
-      right: 0;
+      text-align: center;
+      font-size: 18px;
       background: #fff;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+
+    .wrapper-title {
+      text-align: center;
+      display: flex;
       flex-direction: column;
-      mix-blend-mode: screen;
-      z-index: 500;
-      opacity : 0.7;
+      align-items: center;
+      position: absolute;
+      justify-content: center;
+      left: 10%;
+      top: 30%;
 
-      @media (max-width: 900px) {
-        width: 100%;
-        height: 15%;
-        top : 60px;
-        
-        
-      }
+      .title {
+        font-family: "Gabo";
+        color: #fff;
+        font-size: 3vw;
+        margin-bottom: 2rem;
+        letter-spacing: 0.1rem;
 
-      h1 {
-        font-weight: 800;
-        font-family: "SaoTorpes";
-        color: #000;
-        font-size: 5vw;
-        
+        span {
+          font-size: 2vw;
+          text-transform: uppercase;
+        }
 
         @media (max-width: 900px) {
-          font-size: 3rem;
-        }
-      }
-
-      .description {
-        width: 90%;
-        margin: 0 auto;
-        font-family: sans-serif;
-
-        @media(max-width : 500px) {
-          font-size: 14px;
+          font-size: 2rem;
         }
       }
     }
-  }  
-  
 
-  .swiper {
-    width: 100%;
-    height: 100vh;
-  }
+    .swiper-slide video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-  .swiper-wrapper {
-    width : 100%;
-    height : 100%;
-    
-  }
+    .mySwiper .swiper-pagination-bullet {
+      width: 20px;
+      height: 20px;
+    }
+  </style>
 
-  .swiper-slide {
-    width : 100%;
-    height : 100%;
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  <script
+    is:inline
+    src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
+  <script is:inline>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
 
-  
-.wrapper-title {
-          text-align: center;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          position : absolute;
-         justify-content: center;
-          left : 10%;
-          top : 30%;
-         
-          
-          
-
-            .title {
-              font-family: "Gabo";
-              color: #fff;
-              font-size: 3vw;
-              margin-bottom : 2rem;
-              letter-spacing: 0.1rem;
-
-              span {
-                font-size: 2vw;
-              }
-
-              @media (max-width: 900px) {
-                font-size: 2rem;
-              }
-            }
-        }
-
-  .swiper-slide video {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
- .mySwiper .swiper-pagination-bullet {
-  width: 20px;
-  height: 20px;
-}
-
-
-</style>
-
-
-<script
-  is:inline
-  src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-
-<script is:inline>
-var swiper = new Swiper(".mySwiper", {
-  spaceBetween: 30,
-  centeredSlides: true,
-
-  speed: 1200,
-  effect: 'fade',
-  autoplay: {
-    delay: 10000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  // navigation: {
-  //   nextEl: ".swiper-button-next",
-  //   prevEl: ".swiper-button-prev",
-  // },
-});
-</script>
+      speed: 1200,
+      effect: "fade",
+      autoplay: {
+        delay: 10000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      // navigation: {
+      //   nextEl: ".swiper-button-next",
+      //   prevEl: ".swiper-button-prev",
+      // },
+    });
+  </script>
+</section>
