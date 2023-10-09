@@ -1,182 +1,170 @@
 ---
-import Navbar from '../components/Navbar.astro';
-import Navbar2 from '../components/Navbar2.astro';
+import Navbar from "../components/Navbar.astro";
+import Navbar2 from "../components/Navbar2.astro";
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
-
-
 ---
 
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Portfolio MAxime Somon Electro REAl video ">
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-  
-    
-
-    
-	</head>
-	<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Portfolio MAxime Somon Electro REAl video "
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
     <Navbar2 />
-		<slot />
-	</body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-html {
-  overflow-x: hidden;
-  font-family: sans-serif;
-  scroll-behavior: smooth;
-}
-@font-face {
-  font-family: "SaoTorpes";
-  src: url("../fonts/SaoTorpes.otf");
-}
+  html {
+    overflow-x: hidden;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+  }
+  @font-face {
+    font-family: "SaoTorpes";
+    src: url("../fonts/SaoTorpes.otf");
+  }
 
-@font-face {
-  font-family: "Gabo";
-  src: url("../fonts/gabo.otf");
-}
+  @font-face {
+    font-family: "Gabo";
+    src: url("../fonts/gabo.otf");
+  }
 
-.container {
-  width: 100%;
-  height: 100vh;
-  background: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .container {
+    width: 100%;
+    height: 100vh;
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-a {
-  text-decoration: none;
-  color : inherit;
-}
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 
-.swiper-pagination {
-  height: 10% !important;
-  display: flex !important;
-  justify-content: flex-end !important;
-  align-items: center !important;
-  padding-right: 30% !important;
-}
-
-@media (max-width: 900px) {
   .swiper-pagination {
-    justify-content: center !important;
-    padding-right: 0 !important;
+    height: 10% !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    padding-right: 30% !important;
   }
-}
-.swiper-pagination-bullet {
-  background-color: #fff !important;
-  opacity: 1 !important;
-  border-radius: 0 !important;
-  margin-bottom: 5rem !important;
-  margin-right: 4rem !important;
-  width: 10px !important;
-  height: 10px !important;
-  background: red;
-}
 
-@media (max-width: 900px) {
+  @media (max-width: 900px) {
+    .swiper-pagination {
+      justify-content: center !important;
+      padding-right: 0 !important;
+    }
+  }
   .swiper-pagination-bullet {
-    margin-right: 1rem !important;
+    background-color: #fff !important;
+    opacity: 1 !important;
+    border-radius: 0 !important;
+    margin-bottom: 5rem !important;
+    margin-right: 4rem !important;
+    width: 10px !important;
+    height: 10px !important;
+    background: blue;
   }
-}
-.swiper-pagination-bullet-active {
-  background-color: red !important;
-}
 
- 
+  @media (max-width: 900px) {
+    .swiper-pagination-bullet {
+      margin-right: 1rem !important;
+    }
+  }
+  .swiper-pagination-bullet-active {
+    background: radial-gradient(violet, rgb(109, 109, 245)) !important;
+  }
 
-/* BARRE Scrool*/
-::-webkit-scrollbar {
-  width: 12px;
-  height: 10px;
-}
+  /* BARRE Scrool*/
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 10px;
+  }
 
-::-webkit-scrollbar-track {
-  background: rgb(222, 222, 251);
-}
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(violet, rgb(109, 109, 245));
-  border-radius: 6px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(rgb(243, 79, 243), rgb(71, 71, 249));
-  border-radius: 6px;
-}
+  ::-webkit-scrollbar-track {
+    background: rgb(222, 222, 251);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(violet, rgb(109, 109, 245));
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(rgb(243, 79, 243), rgb(71, 71, 249));
+    border-radius: 6px;
+  }
 
-.btn-link {
-   position : relative;
-    color : black;
-    font-size : 18px;
-    width : 150px;
-    font-family: 'Lato', sans-serif;
-    text-decoration : none;
-    border : 2px solid #a55eea;
-    padding : 5px 8px;
+  .btn-link {
+    position: relative;
+    color: black;
+    font-size: 18px;
+    width: 150px;
+    font-family: "Lato", sans-serif;
+    text-decoration: none;
+    border: 2px solid #a55eea;
+    padding: 5px 8px;
     text-transform: uppercase;
-    overflow : hidden;
-    transition : 1s all ease;
-    display : block;
-    border-radius : 12px;
-    z-index : 10;
+    overflow: hidden;
+    transition: 1s all ease;
+    display: block;
+    border-radius: 12px;
+    z-index: 10;
     text-align: center;
-    
-}
+  }
 
-.btn-retour {
-  width : 80px;
-  font-size : 14px;
-}
+  .btn-retour {
+    width: 80px;
+    font-size: 14px;
+  }
 
-.btn-link::before{
-    background-color : #a55eea;
-    content : ''; 
-    position : absolute;
-    top : 50%;
-    left : 50%;
-    transform : translate(-50%, -50%);
-    z-index : -1;
-    transition : all 0.6s ease;
+  .btn-link::before {
+    background-color: #a55eea;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: all 0.6s ease;
     /* width : 0%;   
     height : 100%; */
     /* width : 100%;
     height : 0% */
-    width : 120%;
-    height : 0;
+    width: 120%;
+    height: 0;
     transform: translate(-50%, -50%) rotate(25deg);
-}
+  }
 
-.btn-link:hover::before{
+  .btn-link:hover::before {
     /* width : 100%; */
     /* height : 100%; */
-    height : 300%;
-    
-}
+    height: 300%;
+  }
 
-.btn-retour {
-  color : #fff;
-  position : absolute;
-  top : 15%;
-  right : 5%;
-}
-
+  .btn-retour {
+    color: #fff;
+    position: absolute;
+    top: 15%;
+    right: 5%;
+  }
 </style>
-
-
-
