@@ -22,6 +22,7 @@ const electroData = await getCollection("electro");
               </video>
 
               <div class="wrapper-title">
+                <h1 class="title-section">ELECTRO</h1>
                 <h3 class="title">
                   {data.data.title}
                   <>
@@ -40,16 +41,6 @@ const electroData = await getCollection("electro");
 
       <div class="swiper-pagination"></div>
     </div>
-
-    <div class="part-left">
-      <h1>ELECTRO</h1>
-      <!-- <p class="description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex,
-        perspiciatis debitis in nisi consequatur similique dolores libero sequi
-        illum sit, ullam harum quis vero minima enim explicabo inventore alias
-        impedit?
-      </p> -->
-    </div>
   </div>
 
   <style lang="scss">
@@ -63,39 +54,6 @@ const electroData = await getCollection("electro");
       .bg-video {
         width: 100%;
         height: 100%;
-      }
-
-      .part-left {
-        width: 30vw;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        mix-blend-mode: screen;
-        z-index: 500;
-        opacity: 0.7;
-
-        @media (max-width: 900px) {
-          width: 100%;
-          height: 15%;
-          top: 60px;
-        }
-
-        h1 {
-          font-weight: 800;
-          font-family: "SaoTorpes";
-          color: #000;
-          font-size: 5vw;
-
-          @media (max-width: 900px) {
-            font-size: 3rem;
-          }
-        }
       }
     }
 
@@ -120,20 +78,38 @@ const electroData = await getCollection("electro");
           position: relative;
 
           .wrapper-title {
+            padding: 0 2rem;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             position: absolute;
-            // width : 30%;
-            right: 10%;
-            top: 30%;
+            width: 30%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: #fff;
+            opacity: 0.6;
+            z-index: 1000;
+            padding-top: 6rem;
 
+            .title-section {
+              font-weight: 800;
+              font-family: "SaoTorpes";
+              color: #000;
+              font-size: 4.5vw;
+              margin-bottom: 5rem;
+
+              @media (max-width: 900px) {
+                font-size: 3rem;
+              }
+            }
             .title {
               font-family: "Gabo";
-              color: #fff;
+              color: "#000";
               font-size: 3vw;
               margin-bottom: 2rem;
+              text-transform: uppercase;
 
               span {
                 font-size: 2vw;
