@@ -34,6 +34,13 @@
           </a>
         </button>
       </div>
+      <div class="gravityButton">
+        <button style="--color: hotpink">
+          <a href="mailto:somonmaxime10@gmail.com">
+            <img class=".buttonIcon imgMail" src="images/Email.svg" alt="" />
+          </a>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -88,7 +95,7 @@
 
       .adresse-mail {
         position: relative;
-        top: 35%;
+        top: 55%;
         opacity: 0;
 
         /* margin-bottom : 200px; */
@@ -96,13 +103,13 @@
         font-weight: 300;
 
         a {
-          text-decoration: underline;
+          text-decoration: none;
         }
       }
 
       .wrapper_gravityBtn {
         position: absolute;
-        bottom: 20%;
+        bottom: 15%;
         display: flex;
         justify-content: center;
         display: flex;
@@ -117,7 +124,7 @@
       .gravityButton {
         display: grid;
         place-items: center;
-        width: 192px;
+        width: 150px;
         aspect-ratio: 1;
         border-radius: 50%;
         // border: 1px dashed #fff2;
@@ -155,6 +162,11 @@
         img {
           width: 70%;
         }
+      }
+    }
+    .imgMail {
+      width: 60px !important;
+      img {
       }
     }
   }

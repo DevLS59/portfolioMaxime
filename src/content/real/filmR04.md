@@ -1,6 +1,7 @@
 ---
-title: bm-dbounce - Captain
+nom : bm & le murmure
+title: Captain
 url: videos/showreelcaptain.mp4
-role: Real
+role: Realisation
 link: https://www.youtube.com/embed/Td6eIomoWwU
 ---

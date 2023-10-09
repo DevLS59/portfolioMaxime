@@ -1,6 +1,7 @@
 ---
-title: bm-dbounce - La piste
+nom : bm & le murmure
+title: La piste
 url: videos/showreellapiste.mp4
-role: Real
+role: Realisation
 link: https://www.youtube.com/embed/0VZf4Y6gT_Y
 ---
