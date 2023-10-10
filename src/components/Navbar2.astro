@@ -9,6 +9,7 @@
     <div class="adresse-mail">
       <a href="mailto:somonmaxime10@gmail.com">Contactez-moi !</a>
     </div>
+    <h3 class="tel">TEL : 06-64-57-56-82</h3>
     <div class="wrapper_gravityBtn">
       <div class="gravityButton">
         <button style="--color: hotpink">
@@ -90,6 +91,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      // justify-content: center;
       top: 0;
       left: 0;
 
@@ -107,9 +109,17 @@
         }
       }
 
+      .tel {
+        position: absolute;
+        top: 65%;
+        opacity: 0;
+        font-size: 1.4rem;
+        font-weight: 300;
+      }
+
       .wrapper_gravityBtn {
         position: absolute;
-        bottom: 20%;
+        bottom: 15%;
         display: flex;
         justify-content: center;
         display: flex;
@@ -185,6 +195,7 @@
 
       .to(".navTitle", { scale: 2, duration: 0.8 })
       .to(".adresse-mail", { opacity: 1 })
+      .to(".tel", { opacity: 1 })
       .to(".wrapper_gravityBtn", { opacity: 1 });
     tl.reversed(true);
   });
@@ -195,6 +206,7 @@
       .to(".navbar", { alignItems: "center", duration: 0.8 }, "-=1")
       .to(".navTitle", { scale: 2, duration: 0.8 })
       .to(".adresse-mail", { opacity: 1 })
+      .to(".tel", { opacity: 1 })
       .to(".wrapper_gravityBtn", { opacity: 1 });
     tl.reversed(true);
   });
