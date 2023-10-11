@@ -17,7 +17,7 @@ const electroData = await getCollection("electro");
         {
           electroData.map((data) => (
             <div class="swiper-slide">
-              <video autoplay loop muted>
+              <video autoplay loop muted width="1920" height="1080">
                 <source src={data.data.url} type="video/mp4" />
               </video>
 
