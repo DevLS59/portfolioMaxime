@@ -23,7 +23,7 @@ const realData = await getCollection("real");
                   {data.data.nom}
                   <>
                     <br />
-                    {data.data.title}
+                    <span class="single">"{data.data.title}"</span>
                     <br />
                     <span> {data.data.role}</span>
                   </>
@@ -78,6 +78,7 @@ const realData = await getCollection("real");
     }
 
     .wrapper-title {
+      padding: 0 2rem;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -95,7 +96,9 @@ const realData = await getCollection("real");
       @media (max-width: 900px) {
         width: 100%;
         height: 30%;
-        padding-top: 2rem;
+        padding: 0;
+        justify-content: flex-start;
+        padding-top: 1rem;
       }
 
       .title-section {
@@ -107,7 +110,7 @@ const realData = await getCollection("real");
 
         @media (max-width: 900px) {
           font-size: 3rem;
-          margin-bottom: 1rem;
+          margin-bottom: 0.5rem;
         }
       }
 
@@ -120,16 +123,23 @@ const realData = await getCollection("real");
         text-transform: uppercase;
 
         @media (max-width: 900px) {
+          font-size: 2rem;
           margin-bottom: 1rem;
+          // line-height: 1.9rem;
         }
+        .single {
+          font-size: 2.5vw;
 
+          @media (max-width: 900px) {
+            font-size: 2rem;
+          }
+        }
         span {
           font-size: 2vw;
           text-transform: uppercase;
-        }
-
-        @media (max-width: 900px) {
-          font-size: 2rem;
+          @media (max-width: 900px) {
+            font-size: 1.5rem;
+          }
         }
       }
     }

@@ -95,7 +95,8 @@ const electroData = await getCollection("electro");
             @media (max-width: 900px) {
               width: 100%;
               height: 30%;
-              padding-top: 2rem;
+              justify-content: flex-start;
+              padding-top: 1rem;
             }
 
             .title-section {
@@ -107,7 +108,7 @@ const electroData = await getCollection("electro");
 
               @media (max-width: 900px) {
                 font-size: 3rem;
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
               }
             }
             .title {
@@ -118,15 +119,17 @@ const electroData = await getCollection("electro");
               text-transform: uppercase;
 
               @media (max-width: 900px) {
-                margin-bottom: 1rem;
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+                line-height: 1.5rem;
               }
               span {
                 font-size: 2vw;
                 text-transform: uppercase;
-              }
 
-              @media (max-width: 900px) {
-                font-size: 2rem;
+                @media (max-width: 900px) {
+                  font-size: 1rem;
+                }
               }
             }
           }
